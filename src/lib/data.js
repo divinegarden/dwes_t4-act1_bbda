@@ -9,10 +9,11 @@ import { db } from '@/lib/db'
 export async function obtenerProductosDB(query) {
     const sql = 'select * from `productos` where nombre like ?';
     const values = [`%${query}%`]
+    // const values = ['%teclado%']
     const [productos] = await db.query(sql, values);
 
     // Introducimos un retardo artificial
-    // await new Promise(resolve => setTimeout(resolve, 2000))
+    await new Promise(resolve => setTimeout(resolve, 2000))
 
     return productos
 }

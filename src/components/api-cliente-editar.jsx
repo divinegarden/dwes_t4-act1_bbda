@@ -1,9 +1,9 @@
 'use client'
-import { editarProductoAPI, editarProductoDB } from "@/lib/action";
+import { editarClienteAPI, editarClienteDB } from "@/lib/action";
 import { useState } from "react";
 
 
-function ProductoEditarAPI({ producto }) {
+function ClienteEditarAPI({ producto }) {
     const [visible, setVisible] = useState(false)
 
     return (
@@ -17,33 +17,22 @@ function ProductoEditarAPI({ producto }) {
                         required
                         id='nombre'
                         name='nombre'
-                        defaultValue={producto.nombre}
+                        defaultValue={cliente.nombre}
                         className='p-1 border border-slate-200 focus:outline-blue-300 text-lg'
                     />
 
-                    <label htmlFor='descripcion'>Descripción:</label>
+                    <label htmlFor='edad'>Edad:</label>
                     <input
                         required
-                        id='descripcion'
-                        name='descripcion'
-                        defaultValue={producto.descripcion}
-                        className='p-1 border border-slate-200 focus:outline-blue-300 text-lg'
-                    />
-
-                    <label htmlFor='precio'>Precio</label>
-                    <input
-                        required
-                        id='precio'
-                        name='precio'
-                        type='number'
-                        step='0.01'
-                        defaultValue={producto.precio}
+                        id='edad'
+                        name='edad'
+                        defaultValue={cliente.edad}
                         className='p-1 border border-slate-200 focus:outline-blue-300 text-lg'
                     />
 
                     <div className='col-span-2 grid gap-2'>
-                        <button formAction={editarProductoAPI} className='bg-green-600 text-white px-4 py-2 rounded-xl'>
-                            Actualizar producto
+                        <button formAction={editarClienteAPI} className='bg-green-600 text-white px-4 py-2 rounded-xl'>
+                            Actualizar cliente
                         </button>
                     </div>
                 </form>
@@ -55,4 +44,4 @@ function ProductoEditarAPI({ producto }) {
     );
 }
 
-export default ProductoEditarAPI;
+export default ClienteEditarAPI;

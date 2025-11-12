@@ -20,6 +20,21 @@
       "descripcion": "Impresora Epson",
       "precio": 44.99,
       "createdAt": "2025-11-06T12:50:07.914Z"
+    },
+    {
+      "id": "6f18",
+      "nombre": "Test",
+      "descripcion": "Esto es un test",
+      "precio": 15,
+      "createdAt": "2025-11-06T16:00:48.646Z"
+    }
+  ],
+  
+  "clientes": [
+    {
+      "id": "1",
+      "nombre": "Juan Pérez",
+      "edad": "22"
     }
   ]
 }
