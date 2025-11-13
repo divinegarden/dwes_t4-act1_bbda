@@ -1,5 +1,7 @@
 DROP DATABASE IF EXISTS productos;
 
+-- Productos
+
 CREATE DATABASE productos;
 USE productos;
 
@@ -20,3 +22,24 @@ VALUES
   ('Monitor 17 pulgadas', 'Monitor plano LCD', 110.22),
   ('Teclado', 'Teclado USB en español', 20.12),
   ('Impresora', 'Impresora láser a color', 360.05);
+  
+-- Clientes
+  CREATE DATABASE clientes;
+  USE clientes;
+
+
+CREATE TABLE clientes (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(200) NOT NULL,
+    edad INT,
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- ALTER TABLE clientes ADD COLUMN imagen VARCHAR(200) AFTER descripcion;
+
+INSERT INTO clientes (nombre, edad) 
+VALUES 
+  ('Pepe', 22),
+  ('Ana', 20),
+  ('Eva', 25);
