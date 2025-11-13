@@ -92,7 +92,7 @@ export async function eliminarProductoAPI(formData) {
 
 export async function nuevoClienteDB(formData) {
     const nombre = formData.get('nombre')
-    const Edad = formData.get('edad')
+    const edad = formData.get('edad')
 
     const sql = 'insert into `clientes` (`nombre`, `edad`) values (?, ?)'
     const values = [nombre, edad];
@@ -110,7 +110,7 @@ export async function editarClienteDB(formData) {
     const values = [nombre, edad, id];
 
     const [result, fields] = await db.query(sql, values)
-    revalidatePath('/cliente-db')
+    revalidatePath('/clientes-db')
 }
 
 export async function eliminarClienteDB(formData) {
